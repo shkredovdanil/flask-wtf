@@ -27,6 +27,10 @@ def distrib():
     people = ['Ридли Скотт', 'Энди Уир', 'Марк Уотни', 'Венкат Капут', 'Тедди Сандерс', 'Шон Бин']
     return render_template('places.html', people=people, title='Распределение')
 
+@app.route('/table/<pol>/<int:age>')
+def table(pol, age):
+    return render_template('table.html', pol=pol, age=age)
+
 
 if __name__ == '__main__':
-    app.run(port=8080, host='192.168.0.113')
+    app.run()

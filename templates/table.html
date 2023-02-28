@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<table>
+  <tr><th>Цвет стен</th></tr>
+  {% if pol=='male' and age >= 21 %}
+    <tr><td><img src="static/img/purple.png"></td></tr>
+  {% elif pol=='male' and age < 21 %}
+    <tr><td><img src="static/img/green.png"></td></tr>
+  {% elif pol=='female' and age < 21 %}
+    <tr><td><img src="static/img/red.png"></td></tr>
+  {% elif pol=='female' and age < 21 %}
+    <tr><td><img src="static/img/pink.png"></td></tr>
+  {% endif %}
+{% endblock %}
