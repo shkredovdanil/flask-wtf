@@ -1,14 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 <table>
-  <tr><th>Цвет стен</th></tr>
+    <tr><th>Цвет стен</th><th>Герой</th></tr>
   {% if pol=='male' and age >= 21 %}
-    <tr><td><img src="static/img/purple.png"></td></tr>
+    <tr><td><img src={{ urls['purple'] }}></td><td><img src={{ people['man'] }}></td></tr>
   {% elif pol=='male' and age < 21 %}
-    <tr><td><img src="static/img/green.png"></td></tr>
+    <tr><td><img src={{ urls['green'] }}></td><td><img src={{ people['boy'] }}></td></tr>
   {% elif pol=='female' and age < 21 %}
-    <tr><td><img src="static/img/red.png"></td></tr>
-  {% elif pol=='female' and age < 21 %}
-    <tr><td><img src="static/img/pink.png"></td></tr>
+    <tr><td><img src={{urls['pink']}}></td><td><img src={{ people['girl'] }}></td></tr>
+  {% elif pol=='female' and age >= 21 %}
+    <tr><td><img src={{ urls['red'] }}></td><td><img src={{ people['woman'] }}></td></tr>
   {% endif %}
+</table>
 {% endblock %}
